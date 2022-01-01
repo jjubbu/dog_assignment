@@ -14,20 +14,27 @@ const CardStyle = styled.div`
   max-width: 50%;
   min-width: 40%;
   flex: 1;
-
-  border: 2px solid #333;
+  padding-bottom: 10px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(34, 41, 64, 0.2);
+  transition: transform 0.5s ease;
 
   img {
     width: 100%;
   }
   h3,
   p {
-    padding: 0 10px;
+    padding: 10px 20px;
   }
 
-  @media only screen and (max-width: 650px) {
-    max-width: 100%;
+  &:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+  }
+
+  @media only screen and (max-width: 690px) {
+    min-width: 100%;
+    border-radius: 0px;
   }
 `;
 
