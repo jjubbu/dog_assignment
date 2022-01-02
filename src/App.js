@@ -112,7 +112,6 @@ const AppStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  overflow: hidden;
   @media only screen and (max-width: 690px) {
     padding: 0;
   }
