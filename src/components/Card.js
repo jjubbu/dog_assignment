@@ -1,11 +1,8 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
 const Card = (props) => {
   const data = props.data;
-  const ref = React.useRef();
-
   return (
-    <CardStyle ref={ref}>
+    <CardStyle>
       <h3>{data.title}</h3>
       <img src={data.image} alt="card" />
       <p>{data.contents}</p>
