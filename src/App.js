@@ -10,6 +10,8 @@ function App() {
   const [loading, setLoading] = React.useState(false);
   const [isList, setIsList] = React.useState(true);
   const pageEnd = React.useRef();
+
+  // 서버에서 리스트를 받아와 state에 저장
   const getList = (num) => {
     apis
       .getListAX(num)
@@ -29,9 +31,11 @@ function App() {
     getList(page);
   }, [page]);
 
+  // 옵저버 선언
   const observer = new IntersectionObserver(
     (e) => {
       const isFocusEnd = e[0].isIntersecting;
+      // 타겟이 뷰에 온전히 들어올 경우 setPage 를 실행
       if (isFocusEnd) {
         setPage((prev) => prev + 1);
       }
@@ -41,6 +45,7 @@ function App() {
 
   React.useEffect(() => {
     if (loading) {
+      // 옵저버의 타겟을 정해줌
       observer.observe(pageEnd.current);
     }
   }, [loading]);
