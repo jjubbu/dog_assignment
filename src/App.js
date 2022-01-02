@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { apis } from "./lib/axios";
 import Card from "./components/Card";
 import Loading from "./components/Loading";
@@ -48,7 +48,8 @@ function App() {
   return (
     <React.Fragment>
       <TitleStyle>
-        <span>무한스크롤,</span> 가 보자고...!
+        <span>무한스크롤,</span>
+        가보자고!
       </TitleStyle>
       <AppStyle id="container">
         {list?.map((l, idx) => {
@@ -66,11 +67,15 @@ function App() {
   );
 }
 
+const pageTitleAni = keyframes`
+0%{width:0;}
+100%{width:100%;}
+`;
+
 const TitleStyle = styled.h1`
   padding: 20px;
   margin: 0 auto;
   max-width: 1200px;
-
   display: flex;
   gap: 10px;
   span {
@@ -85,7 +90,12 @@ const TitleStyle = styled.h1`
       bottom: -5px;
       left: 0;
       z-index: -10;
+      animation: ${pageTitleAni} 1s ease;
     }
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 20px;
+    padding: 15px;
   }
 `;
 
@@ -97,8 +107,12 @@ const AppStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  overflow: hidden;
   @media only screen and (max-width: 690px) {
     padding: 0;
+  }
+  @media only screen and (max-width: 450px) {
+    margin: 10px auto 0;
   }
 `;
 
