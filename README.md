@@ -1,7 +1,11 @@
-# 도그마스터 과제 레포지토리
+# 🐶 도그마스터 과제 레포지토리
 
-과제 기간 : 5일 (21.12.30~)
+[s3 배포](http://seona-infinite-scroll.s3-website.ap-northeast-2.amazonaws.com/)
 
-## 필수 작업 내용물
-무한 스크롤을 이용하여 서버에서 받은 리스트 띄우기
+과제 기간 : 21.12.30~ 22.1.3
 
+- react
+- creact-react-app
+- styled-components
+- intersection observer
+- AWS S3
